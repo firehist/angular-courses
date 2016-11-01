@@ -12,7 +12,7 @@ cd angular2-courses
 ### Create a new project
 
 ```
-cd -r CRM_starter ../angular2-newproject
+cp -r CRM_starter ../angular2-newproject
 cd ../angular2-newproject
 npm install
 npm start
