@@ -51,3 +51,4 @@ You can see a [live version](https://goo.gl/MUXbSA)
 
 [Course Materials](Ressources/README.md)
 
+Bon courage !

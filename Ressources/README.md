@@ -8,4 +8,4 @@
 
 [git pull](HowTo/git_pull.md)
 
-[install NVM](HowTo/install-NVM.md)
+[install NVM](HowTo/install_NVM.md)
