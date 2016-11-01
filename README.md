@@ -2,6 +2,39 @@
 
 This projects is used during the angular 2 training session
 
+## How to use this project
+
+```
+git clone git@github.com:firehist/angular2-courses.git
+cd angular2-courses
+```
+
+### Create a new project
+
+```
+cd -r CRM_starter ../angular2-newproject
+cd ../angular2-newproject
+npm install
+npm start
+```
+
+### Run starter
+
+```
+cd CRM_starter
+npm install
+npm start
+```
+
+### Run final application
+
+```
+cd CRM_final
+npm install
+npm start
+```
+
+
 ## Architecture
 
 ### CRM_starter
