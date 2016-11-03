@@ -12,10 +12,12 @@ But if not, you might be faced to conflict between server and local files.
 2. `git pull`: Retrieve server informaiton
 3. `git stash pop`: Restore saved work (conflict can occurs)
 
+
 ## Discard all our changes
 
 1. `git reset --hard HEAD`: Discard all our local changes
 2. `git pull`
+
 
 ## Resolving merge after conflict
 
