@@ -4,7 +4,7 @@
   "author": "Benjamin Longearet",
   "description": "Package for the Contact Management Application",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run live\" \"npm run api\" ",
+    "start": "tsc && concurrently \"tsc -w\" \"npm run live\" \"npm run api\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lint": "tslint ./app/**/*.ts -t verbose",
@@ -17,6 +17,7 @@
     "@angular/compiler": "^2.1.2",
     "@angular/core": "^2.1.2",
     "@angular/forms": "^2.1.2",
+    "@angular/http": "^2.1.2",
     "@angular/platform-browser": "^2.1.2",
     "@angular/platform-browser-dynamic": "^2.1.2",
     "@angular/router": "^3.1.2",
