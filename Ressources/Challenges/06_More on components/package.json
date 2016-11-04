@@ -2,13 +2,13 @@
   "name": "product-management",
   "version": "1.0.0",
   "author": "Benjamin Longearet",
-  "description": "Package for the Contact Management Application",
+  "description": "Package for the Product Management Application",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"npm run live\" \"npm run api\" ",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run live\" \"npm run api\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lint": "tslint ./app/**/*.ts -t verbose",
-    "live": "live-server --entry-file=index.html",
+    "live": "live-server --entry-file=index.html --ignore=*.ts",
     "api": "json-server --watch ./api/products/products.json"
   },
   "license": "ISC",
