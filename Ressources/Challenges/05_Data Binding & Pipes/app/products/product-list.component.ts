@@ -12,7 +12,7 @@ export class ProductListComponent {
     listFilter: string = 'cart';
     products: any[] = [
         {
-            "productId": 2,
+            "id": 2,
             "productName": "Garden Cart",
             "productCode": "GDN-0023",
             "releaseDate": "March 18, 2016",
@@ -22,7 +22,7 @@ export class ProductListComponent {
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
         },
         {
-            "productId": 5,
+            "id": 5,
             "productName": "Hammer",
             "productCode": "TBX-0048",
             "releaseDate": "May 21, 2016",
