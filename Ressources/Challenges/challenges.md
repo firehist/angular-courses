@@ -93,13 +93,41 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 
 *Working based on 10 source code*
 
+1. Implement a `back` button on the `ProductDetailComponent` to navigate to `/products` url
+2. Read `id` parameter from url in `ProductDetailComponent` using `ActivatedRoute`
+3. Implement a Guard to check the validity of given `id`
+
 ## 12 - Forms
 
 *Working based on 11 source code*
 
+1. Create a new component called `ProductEditComponent` with a basic edit form of a product
+2. Use `template driven form`
+    1. Use `[(ngModel)]` on each input to create a two-way binding
+    2. Add the hash operator to retrieve the current `ngModel` state (eg. `#nameInput`)
+    3. Display an error box below based on `nameInput.valid`
+    4. Implement a `(ngSubmit)` method to execute a function when user submit
+3. Use `model driven form`
+    1. Update the form to use `[ngFormModel]=formName` on the `<form>` DOM node
+    2. Changes all `[(ngModel)]` into a `ngControl="inputName"`
+    3. Import `ReactiveFormsModule` in your current angular module
+    4. Import `FormBuilder` and `Validators` from `@angular/forms` into your component
+    5. Inject into the component the `FormBuilder`
+    6. Create a public `formName` variable by using `FormBuilder`
+    7. Describe your forms using: `ControlGroup`
+    8. Add some validators (custom?)
+
 ## 13 - Angular Modules
 
 *Working based on 12 source code*
+
+Following slides:
+
+1. Create a Feature module called `ProductModule`
+2. Create a Shared module called `SharedModule`
+3. Refactor `AppModule` if necessary
+4. Create a `ProductRoutingModule` and a `AppRoutingModule` to split down routing configuration
+5. Optional: Create a `CoreComponent` to handle all services once in your application
 
 ## 14 - Angular 2 set-up revisited
 
