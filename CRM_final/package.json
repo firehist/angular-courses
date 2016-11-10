@@ -6,7 +6,6 @@
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"npm run live\" \"npm run api\" ",
     "tsc": "tsc",
-    "tsc:w": "tsc -w",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "live": "live-server --entry-file=index.html",
     "api": "json-server --watch ./api/products/products.json"

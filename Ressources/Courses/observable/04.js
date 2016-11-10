@@ -12,6 +12,6 @@ function doneCallback() {
     console.log(`Done!`)
 }
 
-readaboe.on('data', nextCallback);
-readaboe.on('error', errorCallback);
-readaboe.on('end', doneCallback);
+readable.on('data', nextCallback);
+readable.on('error', errorCallback);
+readable.on('end', doneCallback);
