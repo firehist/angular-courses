@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe.only('about classes', () => {
+describe('about classes', () => {
   function applyMixins(derivedCtor: any, baseCtors: any[]) {
     baseCtors.forEach(baseCtor => Object
         .getOwnPropertyNames(baseCtor.prototype)
