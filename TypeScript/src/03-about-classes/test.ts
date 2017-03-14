@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe('about classes', () => {
+describe.only('about classes', () => {
   function applyMixins(derivedCtor: any, baseCtors: any[]) {
     baseCtors.forEach(baseCtor => Object
         .getOwnPropertyNames(baseCtor.prototype)
@@ -9,14 +9,38 @@ describe('about classes', () => {
   }
 
   it('1-your first class', () => {
-    class SuperHero { } // _
+    class SuperHero {
+      constructor(private prenom: string, private nom: string){}
+      talk(): string{
+        return 'My favourite saying is : Hi my name is ' + this.prenom + ' ' + this.nom;
+      }
+    }
+   // _
 
     var hero = new SuperHero('Bruce', 'Wayne');
     expect(hero.talk()).to.equal('My favourite saying is : Hi my name is Bruce Wayne');
   });
 
   it('2-you can use getter and setters', () => {
-    class Person { } // _
+    class Person {
+
+      private _fullname: string;
+
+
+      constructor(private prenom: string, private nom: string ){
+        this._fullname =   this.prenom + ' ' + this.nom;
+
+      }
+
+      get fullName(): string {
+
+        return this._fullname;
+      }
+      set fullName(nom_concatene: string){
+        this._fullname = nom_concatene;
+      }
+
+    } // _
 
     var person = new Person('John', 'Doe');
     expect(person.fullName).to.equal('John Doe');
@@ -30,7 +54,14 @@ describe('about classes', () => {
       sayHi(): string;
     }
 
-    class Developer { } // _
+    class Developer implements IDeveloper{
+
+      constructor(private developer: string){};
+
+      sayHi(): string{
+        return 'Hello my favourite language is ' + this.developer;
+      }
+     } // _
 
     var developer: IDeveloper = new Developer('TypeScript');
     expect(developer.sayHi()).to.equal('Hello my favourite language is TypeScript');
@@ -49,7 +80,18 @@ describe('about classes', () => {
       }
     }
 
-    class Sidekick { } // _
+    class Sidekick extends SuperHero{
+
+      constructor(name: string, ability: string, private hero: SuperHero) {
+        super (name, ability);
+
+      }
+
+      public talk(){
+        return super.talk()+' and my master is ' + this.hero.name;
+      }
+
+    } // _
 
     var batman = new SuperHero('Batman', 'Martial arts');
     var robin = new Sidekick('Robin', 'Stick', batman);
@@ -70,11 +112,10 @@ describe('about classes', () => {
     }
 
     var developer = new Developer('JavaScript');
-    expect(developer.sayHi.call( _ ))
-      .to.equal('Hello my favourite language is TypeScript');
+    expect(developer.sayHi.call({favouriteLanguage: "TypeScript"})).to.equal('Hello my favourite language is TypeScript');
   });
 
-  it('6-mix it', () => {
+  it('6-mix it NOT TODO', () => {
     class BackDeveloper {
       public static languages = ['CSharp'];
       public writeCSharp() {
@@ -92,7 +133,17 @@ describe('about classes', () => {
       }
     }
 
-    class FullStackDeveloper { } // _
+    class FullStackDeveloper {
+      public talk(){
+        if (this.writeCSharp) {
+            return 'Hello I\'m a BackDeveloper and I know CSharp'
+        } else if (this.writeJavaScript) {
+          return 'Hello I\'m a FrontDeveloper and I know JavaScript and TypeScript';
+        } else {
+          return 'Hello I\'m a FullStackDeveloper and I know CSharp and JavaScript and TypeScript'
+        }
+      }
+    } // _
 
     var developer = new FullStackDeveloper();
     expect(developer.talk())

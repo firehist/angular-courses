@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe('about destructuring arrays', () => {
+xdescribe('about destructuring arrays', () => {
   it('1-should extract value from array', () => {
     let firstValue = [1];
     expect(firstValue).to.equal(1);

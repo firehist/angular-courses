@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe('about decorators', () => {
+xdescribe('about decorators', () => {
   var calculator: Calculator,
     logStack: string[] = [];
 

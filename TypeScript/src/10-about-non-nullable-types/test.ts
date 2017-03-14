@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe('about non nullable types', () => {
+xdescribe('about non nullable types', () => {
 
   function contains(searchString: string, collection: string[]) {
     // _

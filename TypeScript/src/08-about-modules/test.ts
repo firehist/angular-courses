@@ -4,7 +4,7 @@ import * as chai from 'chai';
 
 var expect = chai.expect;
 
-describe('about modules', () => {
+xdescribe('about modules', () => {
   it('1-can import a class exported by the module', () => {
     var validator = new ZipCodeValidator();
     expect(validator.isAcceptable('12345')).to.be._;

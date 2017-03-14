@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe('about interfaces', () => {
+xdescribe('about interfaces', () => {
   it('1-describes an object', () => {
     var person : _ = {
       firstName: 'John'
