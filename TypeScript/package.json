@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha src --recursive --watch",
     "start": "tsc -p . -w",
+    "clean": "rm src/**/*.{js,js.map} || true && rm {app,bundle}.{js,js.map} || true",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached"
   },
   "author": "",
