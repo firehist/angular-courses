@@ -1,54 +1,59 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-xdescribe('about interfaces', () => {
+describe.only('about interfaces', () => {
   it('1-describes an object', () => {
-    var person : _ = {
+    var person : {firstName: string} = {
       firstName: 'John'
     };
-    expect(person.firstName).to.equal( _ );
+    expect(person.firstName).to.equal( 'John' );
   });
 
   it('2-should be possible to use it as a type', () => {
-    // _
-
-    var person: _ = {
+    interface IPerson {
+      firstName: string;
+    }
+    var person: IPerson = {
       firstName: 'John'
     };
-    expect(person.firstName).to.equal( _ );
+    expect(person.firstName).to.equal( 'John' );
   });
 
   it('3-can be extended', () => {
     interface IAnimal {
       gender: string;
     }
-
-    // _
-
-    var person: _ = {
+    interface IPerson extends IAnimal {
+      firstName: string;
+    }
+    var person: IPerson = {
       gender: 'male',
       firstName: 'John'
     };
-    expect(person.gender).to.equal( _ );
-    expect(person.firstName).to.equal( _ );
+    expect(person.gender).to.equal( 'male' );
+    expect(person.firstName).to.equal( 'John' );
   });
 
   it('4-can have optional properties', () => {
-    // _
-
-    var person: _ = {
+    interface IPerson {
+      firstName: string;
+      lastName?: string;
+    }
+    var person: IPerson = {
       firstName: 'John'
     };
 
-    expect(person.firstName).to.equal( _ );
-    expect(person.lastName).to.equal( _ );
+    expect(person.firstName).to.equal( 'John' );
+    expect(person.lastName).to.equal( undefined );
   });
 
-  it('5-can have readonly properties', () => {
+  it.only('5-can have readonly properties', () => {
     // _
-
+    interface IPerson {
+      readonly firstName: string;
+    }
     var error: boolean = false;
-    var person: _ = {
+    var person: IPerson = {
       firstName: 'John'
     };
 
@@ -59,8 +64,8 @@ xdescribe('about interfaces', () => {
       error = true;
     }
 
-    expect(error).to.be._;
-    expect(person.firstName).to.equal( _ );
+    expect(error).to.be.false;
+    expect(person.firstName).to.equal( 'Jane' );
   });
 
   it('6-can describe maps', () => {
