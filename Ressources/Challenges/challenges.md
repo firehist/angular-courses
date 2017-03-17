@@ -4,40 +4,110 @@ List all our challenges for this Angular 2 course
 
 ## 01 - Introduction
 
-No Challenge here!
+No Challenge here but some commands to type in a terminal.
 
-## 02 - Start with beginning
+1. Install NVM (https://github.com/creationix/nvm#install-script)
+2. Install a Node Version through NVM
+```
+nvm install 7
+nvm alias default 7
+```
+3. Install (`angular-cli`)[https://cli.angular.io]
+`npm install -g @angular/cli
+4. Create a working directory
+```
+mkdir my/working/directory
+cd my/working/directory
+```
+5. Boostrap an angular cli application
+```
+ng new myProjectName
+cd myProjectName
+# Run the application through http://localhost:4200
+ng serve
+```
 
-Challenge is coming.
+### Bonus
 
-take a look at the slides.
+Take a look at https://yarnpkg.com to get a faster Node Package Manager
+
+## 02 - TypeScript
+
+Challenge is in the folder `./TypeScript/src`
+
+take a look at the slides and use Internet to do all the exercices.
+
+### How to
+
+```
+# Dans un premier terminal
+cd GIT_PROJECT/TypeScript
+npm run start
+
+# Dans un second terminal
+cd GIT_PROJECT/TypeScript
+npm run test
+```
+
+You have to fix all tests (should be green in the terminal window) by updating part specified by a `// _` or a `_`.
 
 ## 03 - Introduction to Components
 
-Challenge is coming.
+**Main idea: use ng generate and be familiar with basic component**
 
-take a look at the slides.
+1. Create a component called `header`
+`ng generate component header`
+2. Add the selector element `<app-header></<app-header>` into the main HTML `app.component.html`
+3. Play with template to see what's going on
+  a. Add image
+  b. Add code between `<app-header>` and `</<app-header>`
+  c. be genious :D
 
 ## 04 - Templates, Interpolation & Directives
 
 *Working based on 03 source code*
 
-`// Todo this weekend`
+**Main idea: create a product list view by using *ngIf & *ngFor directives**
+
+1. Create a component called `product-list`
+2. Add the selector element into the `app.component.html`
+3. Work on the product-list component class
+  a. Add an initial collection of product
+  ```
+  products = [{
+    id: 1,
+    image: 'http://www.notre-planete.info/actualites/images/loisirs/piscine-naturelle.jpg',
+    nom: 'Piscine naturel',
+    note: 5
+  }]
+  ```
+4. Work on the product-list component template
+  a. Add a table to display product (display image url as text)
+  b. Use `*ngIf` directive to show the table if there is no product in the array
+  c. Use `*ngFor` directive on `<tr>` element to repeat this element as many times as products in the array
 
 ## 05 - Data Binding & Pipes
 
 *Working based on 04 source code*
 
-1. Add image into the table with `product.imageUrl` 
-2. Develop the show/hide button for images
+1. Display image as `<img src...` into the table with a *property binding* to `product.imageUrl` 
+2. Insert a button at the top of the table and set an *event binding* to display and hide all images
 The text should be adapted to the current stage: `Show the images` or `Hide the images`
-3. Develop the filter two-way binding (input text <=> display)
+3. Develop the filter two-way binding (input text <=> display) (*use banana in the box `[()]`*)
 
 ## 06 - More on components
 
 *Working based on 05 source code*
 
 1. Implement the `IProduct` interface and use it as Data Type for our products collection
+```
+interface IProduct {
+  id: number
+  image: string
+  nom: string
+  note: number
+}
+```
 2. Develop the `productFilter` pipe.
 3. Use Component lifecycle to `console.log` a message into the `onInit` event
 4. Add a `styleUrl` attribute to the `ProductListComponent` component declaration
@@ -59,6 +129,8 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 1. Develop the `ProductService` with a method `getProducts`
 2. `getProducts` method will now carry the product collection (which is for now into our `ProductListComponent`)
 3. Inject and use this service into the `ProductListComponent` to tretrieve the products
+
+**FROM THIS POINT IT NEEDS TO BE UPDATED!**
 
 ## 09 - Retrieving data Using HTTP
 
