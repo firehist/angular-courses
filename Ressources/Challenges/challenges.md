@@ -126,19 +126,17 @@ interface IProduct {
 
 *Working based on 07 source code*
 
-1. Develop the `ProductService` with a method `getProducts`
-2. `getProducts` method will now carry the product collection (which is for now into our `ProductListComponent`)
-3. Inject and use this service into the `ProductListComponent` to tretrieve the products
-
-**FROM THIS POINT IT NEEDS TO BE UPDATED!**
+1. Create a new angular service called `ProductService``
+2. Ensure that it will be declared at our appModule level
+3. Write the `getProducts` method
+4. Replace the product list into our `ProductListComponent` by calling this method
 
 ## 09 - Retrieving data Using HTTP
 
 *Working based on 08 source code*
 
-1. Import the `HttpModule` into the `AppModule`
+1. Import the `HttpModule` into the `AppModule` (if not already done)
     1. Install the `@angular/http` module
-    2. Add it to the `systemjs` configuration file
     3. Import the `HttpModule` into our `AppModule`
 2. Inject `Http` into our `ProductService`
 3. Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
@@ -147,6 +145,8 @@ interface IProduct {
     2. `do` to `console.log` the JSON Object
     3. `catch` to attach a method to handle errors
 5. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
+
+**FROM THIS POINT IT NEEDS TO BE UPDATED!**
 
 ## 10 - Navigation and Routing Basics
 
