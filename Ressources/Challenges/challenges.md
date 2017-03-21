@@ -145,6 +145,8 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 
 ## 06 - More on components
 
+
+
 *Working based on 05 source code*
 
 1. Develop the `productFilter` pipe and use it into the product-list view.
