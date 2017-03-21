@@ -1,0 +1,53 @@
+Arguments: 
+  /Users/bennnou/.nvm/versions/node/v6.9.1/bin/node /Users/bennnou/.nvm/versions/node/v6.9.1/bin/yarn
+
+PATH: 
+  /Users/bennnou/.nvm/versions/node/v6.9.1/bin:/Users/bennnou/.yarn/bin:/Users/bennnou/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bennnou/.rvm/bin:/Users/bennnou/.rvm/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home:/usr/local/ec2/ec2-api-tools-1.7.5.1:/Users/bennnou/Library/Python/2.7/bin
+
+Yarn version: 
+  0.18.1
+
+Node version: 
+  6.9.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "angular2-courses-typescript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "mocha src --recursive",
+      "start": "tsc -p . -w",
+      "build": "webpack --progress --profile --colors --display-error-details --display-cached"
+    },
+    "author": "",
+    "dependencies": {},
+    "devDependencies": {
+      "ts-loader": "^0.9.5",
+      "tslint": "^3.15.1",
+      "typescript": "^2.0.6",
+      "webpack": "^1.13.0",
+      "webpack-dev-server": "^1.14.1",
+      "webpack-merge": "^0.14.0",
+      "@types/chai": "^3.4.34",
+      "@types/mocha": "^2.2.32",
+      "@types/node": "^6.0.41",
+      "chai": "^3.5.0",
+      "mocha": "^3.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND nexus.elium.io nexus.elium.io:443
+      at errnoException (dns.js:28:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)

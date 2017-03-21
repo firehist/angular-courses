@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "images": [
+        "http://www.notre-planete.info/actualites/images/loisirs/piscine-naturelle.jpg",
+        "https://image.freepik.com/free-icon/quote_318-27950.jpg"
+      ],
+      "nom": "Piscine naturel",
+      "note": 5,
+      "currentImageIndex": 0
+    },
+    {
+      "id": 2,
+      "images": [],
+      "nom": "soleil",
+      "note": 5,
+      "currentImageIndex": 0
+    },
+    {
+      "id": 3,
+      "images": [],
+      "nom": "transat",
+      "note": 2,
+      "currentImageIndex": 0
+    },
+    {
+      "id": 4,
+      "images": [],
+      "nom": "tradffnsat",
+      "note": 2,
+      "currentImageIndex": 0
+    }
+  ]
+}
