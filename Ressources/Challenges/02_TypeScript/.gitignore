@@ -1,9 +1,0 @@
-node_modules
-npm-debug.log
-.idea
-bundle.js
-bundle.js.map
-**/*.js
-**/*.js.map
-src/**/*.js
-src/**/*.js.map
