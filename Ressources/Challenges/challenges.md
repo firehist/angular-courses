@@ -59,7 +59,7 @@ You have to fix all tests (should be green in the terminal window) by updating p
 `ng generate component header`
 2. Add the selector element `<app-header></<app-header>` into the main HTML `app.component.html`
 3. Play with template to see what's going on
-  a. Add image
+  a. Add link to welcome & products page
   b. Add code between `<app-header>` and `</<app-header>`
   c. be genious :D
 
@@ -74,17 +74,65 @@ You have to fix all tests (should be green in the terminal window) by updating p
 3. Work on the product-list component class
   a. Add an initial collection of product
   ```
-  products = [{
-    id: 1,
-    image: 'http://www.notre-planete.info/actualites/images/loisirs/piscine-naturelle.jpg',
-    nom: 'Piscine naturel',
-    note: 5
-  }]
+  products = [
+        {
+            "id": 1,
+            "productName": "Leaf Rake",
+            "productCode": "GDN-0011",
+            "releaseDate": "March 19, 2016",
+            "description": "Leaf rake with 48-inch wooden handle.",
+            "price": 19.95,
+            "starRating": 3.2,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+        },
+        {
+            "id": 2,
+            "productName": "Garden Cart",
+            "productCode": "GDN-0023",
+            "releaseDate": "March 18, 2016",
+            "description": "15 gallon capacity rolling garden cart",
+            "price": 32.99,
+            "starRating": 4.2,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        },
+        {
+            "id": 5,
+            "productName": "Hammer",
+            "productCode": "TBX-0048",
+            "releaseDate": "May 21, 2016",
+            "description": "Curved claw steel hammer",
+            "price": 8.9,
+            "starRating": 4.8,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        },
+        {
+            "id": 8,
+            "productName": "Saw",
+            "productCode": "TBX-0022",
+            "releaseDate": "May 15, 2016",
+            "description": "15-inch steel blade hand saw",
+            "price": 11.55,
+            "starRating": 3.7,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+        },
+        {
+            "id": 10,
+            "productName": "Video Game Controller",
+            "productCode": "GMG-0042",
+            "releaseDate": "October 15, 2015",
+            "description": "Standard two-button video game controller",
+            "price": 35.95,
+            "starRating": 4.6,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+        }
+    ]
   ```
 4. Work on the product-list component template
   a. Add a table to display product (display image url as text)
   b. Use `*ngIf` directive to show the table if there is no product in the array
   c. Use `*ngFor` directive on `<tr>` element to repeat this element as many times as products in the array
+  d. Add a button to show/hide all images on the page
+5. OPTIONAL: Add multiple images per product with a caroussel
 
 ## 05 - Data Binding & Pipes
 
@@ -99,18 +147,10 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 
 *Working based on 05 source code*
 
-1. Implement the `IProduct` interface and use it as Data Type for our products collection
-```
-interface IProduct {
-  id: number
-  image: string
-  nom: string
-  note: number
-}
-```
-2. Develop the `productFilter` pipe.
-3. Use Component lifecycle to `console.log` a message into the `onInit` event
-4. Add a `styleUrl` attribute to the `ProductListComponent` component declaration
+1. Develop the `productFilter` pipe and use it into the product-list view.
+2. Use Component lifecycle to `console.log` a message into the `onInit` event
+3. Add specific style for the product-list component
+4. Add filter to product information (eg: currency, uppercase, etc.)
 
 ## 07 - Building Nested Component
 
@@ -146,20 +186,17 @@ interface IProduct {
     3. `catch` to attach a method to handle errors
 5. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
 
-**FROM THIS POINT IT NEEDS TO BE UPDATED!**
-
-## 10 - Navigation and Routing Basics
-
 *Working based on 09 source code*
 
 1. Create a simple `ProductDetailComponent` with a basic template 
 2. Import the `RouterModule` into the `AppModule`
     1. Install the `@angular/router` module
-    2. Add it to the `systemjs` configuration file
-    3. Import the `RouterModule` into our `AppModule`
-    4. Use the `RouterModule.forRoot([])` syntax to describe the application's routes
-3. Add the `<router-outlet></router-outlet>` instead of our `nat-products` directive into `AppComponent`
+    2. Import the `RouterModule` into our `AppModule`
+    3. Use the `RouterModule.forRoot([])` syntax to describe the application's routes
+3. Add the `<router-outlet></router-outlet>` instead of our `app-product-list` directive into our `AppRootComponent`
 4. Add a menu to navigate through Home and Product List pages using the directive `[routerLink]` directive
+
+**FROM THIS POINT IT NEEDS TO BE UPDATED!**
 
 ## 11 - Navigating and Routing Advanced
 
