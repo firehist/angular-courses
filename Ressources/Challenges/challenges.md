@@ -158,11 +158,11 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 
 *Working based on 06 source code*
 
-1. Create a `starComponent` which use the provided template `shared/star.component.html`
+1. Create a `starComponent` which display the rating with stars
 2. Use this component into our `productListComponent` and place it next to existing `product.starRating`
 3. Set-up `rating` input into `starComponent`
-4. Set-up `notify` output into `starComponent`
-5. Listen `notify` event from `ProductListComponent`
+4. Set-up `ratingClicked` output into `starComponent`
+5. Listen `ratingClicked` event from `ProductListComponent`
 
 ## 08 - Services and dependency injection
 
