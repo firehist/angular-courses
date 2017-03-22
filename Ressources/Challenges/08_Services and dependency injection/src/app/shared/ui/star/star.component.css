@@ -1,3 +1,10 @@
-.crop {
-  overflow: hidden;
+.wrapper {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.glyphicon-star:hover:before,
+.glyphicon-star:hover ~ .glyphicon-star:before {
+  cursor: pointer;
+  color:  #E2B13C;
 }
