@@ -168,10 +168,14 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 
 *Working based on 07 source code*
 
-1. Create a new angular service called `ProductService``
+1. Create a new angular service called `ProductService`
+
+`$ ng generate service shared/models/product`
+
 2. Ensure that it will be declared at our appModule level
-3. Write the `getProducts` method
-4. Replace the product list into our `ProductListComponent` by calling this method
+3. Move the IProduct interface and the products array from our `productListComponent` to this new service
+4. Write a public `getProducts` method to access to this products array
+5. [OPTIONAL]: Write a public `getObservableProducts` which return an Observable
 
 ## 09 - Retrieving data Using HTTP
 
