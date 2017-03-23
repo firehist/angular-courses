@@ -17,12 +17,11 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
-    /* Observable version is
-    this.productObservableService().subscribe(
-      _ => this.products = _
-    );
-    */
+    this.productService.getProducts()
+      .subscribe(
+        products => this.products = products,
+        err => console.log('An error occured', err)
+      );
   }
 
   toggleImage() {

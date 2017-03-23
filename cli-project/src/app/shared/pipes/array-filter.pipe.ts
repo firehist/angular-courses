@@ -1,4 +1,4 @@
-import {IProduct} from '../../+products/product-list.component';
+import { IProduct } from '../models/product.service';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
