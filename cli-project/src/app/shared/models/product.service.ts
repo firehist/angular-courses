@@ -5,6 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/concatMap';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/observable/from';
 
 export interface IProduct {
     id: number;
@@ -36,10 +40,19 @@ export class ProductService {
       });
   }
 
-  getObservableProducts(): Observable<IProduct[]> {
-    return new Observable(observer => {
-      observer.next(this.products);
-    });
+  getProductById(id: number): Observable<IProduct> {
+    return this.getProducts()                           // Retrieve the products collection (eg: [x,y,z])
+      .map(products => {
+        const foundProduct = products.find(product => product.id === id);
+        if (!foundProduct) {
+          throw new Error(`Product(${id}) not found!`);
+        }
+        return foundProduct;
+      })
+      .catch(error => {
+        console.error(error.message);
+        return Observable.throw(error.message);
+      });
   }
 
 }

@@ -46,9 +46,10 @@
                                  [style.width.px]="imageWidth"
                                  [style.margin.px]="imageMargin">
                         </td>
-                        <td><a href="javascript:;">
+                        <td>
+                          <a [routerLink]="['/products', product.id]">
                             {{product.productName}}
-                            </a>
+                          </a>
                         </td>
                         <td>{{ product.productCode }}</td>
                         <td>{{ product.releaseDate }}</td>
