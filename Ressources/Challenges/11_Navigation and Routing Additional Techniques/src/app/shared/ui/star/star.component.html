@@ -1,0 +1,11 @@
+<div class="wrapper" [title]="rating"
+    (click)='onClick()'>
+    <div style="width: 86px">
+        <span *ngFor="let i of [5,4,3,2,1]"
+              class="glyphicon glyphicon-star"
+              (click)="updateRating(i)"
+              [style.color]="i > getRoundedRating() ?  '#DDD' : '#333'"
+              ></span>
+    </div>
+    {{rating}}
+</div>

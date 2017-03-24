@@ -192,15 +192,20 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
     3. `catch` to attach a method to handle errors
 5. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
 
+## 10 - Navigation and Routing Basics
+
 *Working based on 09 source code*
 
-1. Create a simple `ProductDetailComponent` with a basic template 
-2. Import the `RouterModule` into the `AppModule`
+1. Create a simple `ProductDetailComponent` and a `WelcomeComponent` with a basic template 
+2. Import the `RouterModule` into the `AppModule` (if not already there)
     1. Install the `@angular/router` module
     2. Import the `RouterModule` into our `AppModule`
-    3. Use the `RouterModule.forRoot([])` syntax to describe the application's routes
+    3. Use the `RouterModule.forRoot([])` syntax to describe the application's routes (Note that `RouterModule.forChild([]) is used in angular sub-module of our application)
 3. Add the `<router-outlet></router-outlet>` instead of our `app-product-list` directive into our `AppRootComponent`
 4. Add a menu to navigate through Home and Product List pages using the directive `[routerLink]` directive
+5. Add to the `ProductDetailComponent` two link:
+  - One to go back to `/products` route
+  - an other to go to the next product detail page
 
 **FROM THIS POINT IT NEEDS TO BE UPDATED!**
 
@@ -208,8 +213,9 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 
 *Working based on 10 source code*
 
-1. Implement a `back` button on the `ProductDetailComponent` to navigate to `/products` url
-2. Read `id` parameter from url in `ProductDetailComponent` using `ActivatedRoute`
+1. Read `id` parameter from url in `ProductDetailComponent` using `ActivatedRoute`
+2. Develop a method `getProductById(id:number)` in our `ProductService`
+2. Develop the `ProductDetailComponent` to display real product detail information by retrieving the product from our `ProductService`
 3. Implement a Guard to check the validity of given `id`
 
 ## 12 - Forms
