@@ -1,55 +1,25 @@
-# angular2-courses
+# angular-courses
 
-This projects is used during the angular 2 training session
+This projects is used during the angular training session @ Nomade Advanced Technology
 
 ## How to use this project
 
+### Fork it, Clone it and enjoy it!
+
 ```
-git clone git@github.com:firehist/angular2-courses.git
+git clone git@github.com:firehist/angular-courses.git
 cd angular2-courses
 ```
 
-### Create a new project
+### Architecture
 
 ```
-cp -r CRM_starter ../angular2-newproject
-cd ../angular2-newproject
-npm install
-npm start
+├── Ressources
+│   ├── Challenges  // Solutions to TP
+│   ├── CheatSheet
+│   ├── Courses     // Slides
+│   └── HowTo       // Little howTo
+└── TypeScript
 ```
-
-### Run starter
-
-```
-cd CRM_starter
-npm install
-npm start
-```
-
-### Run final application
-
-```
-cd CRM_final
-npm install
-npm start
-```
-
-
-## Architecture
-
-### CRM_starter
-
-Starter with a minimal Angular application.
-
-### CRM_final
-
-[Final Angular Application](CRM_final/README.md)
-
-You can see a [live version](https://goo.gl/MUXbSA)
-
-### Ressources
-
-[Course Materials](Ressources/README.md)
 
 Bon courage !
-Yes!
